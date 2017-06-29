@@ -1,0 +1,278 @@
+<!DOCUMENT html><html><head><meta charset="UTF-8"><title>docker</title><style type="text/css">@import url(https://fonts.googleapis.com/css?family=Oxygen);</style><style type="text/css">@charset "UTF-8";
+/*** base style for impress ***/
+/************/
+/*** Font ***/
+/************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1;
+  font-family: "Oxygen", georgia, "\5FAE\8EDF\6B63\9ED1\9AD4", "sans-serif";
+  min-height: 740px;
+  background: #d7d7d7;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#f0f0f0), to(#9ba5af));
+  background: -webkit-radial-gradient(#f0f0f0, #9ba5af);
+  background: -moz-radial-gradient(#f0f0f0, #9ba5af);
+  background: -ms-radial-gradient(#f0f0f0, #9ba5af);
+  background: -o-radial-gradient(#f0f0f0, #9ba5af);
+  background: radial-gradient(#f0f0f0, #9ba5af); }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*
+    Now let's bring some text styles back ...
+*/
+b, strong {
+  font-weight: bold; }
+
+i, em {
+  font-style: italic; }
+
+sub, sup {
+  position: relative; }
+
+sub {
+  bottom: -.25em; }
+
+sup {
+  top: -.5em; }
+
+/*
+    ... and give links a nice look.
+*/
+.step a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  padding: 0 0.3em;
+  background: #3e4852;
+  border-radius: 0.2em;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
+  .step a:hover, .step a:focus {
+    color: rgba(255, 255, 255, 0.9);
+    background: #54626f;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-decoration: none; }
+
+/*
+    step style
+*/
+.impress-enabled .step {
+  margin: 0;
+  opacity: 0.3;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s; }
+  .impress-enabled .step.active {
+    opacity: 1; }
+
+.step {
+  cursor: pointer;
+  position: relative;
+  width: 900px;
+  padding: 20px;
+  margin: 20px auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Oxygen", georgia, "\5FAE\8EDF\6B63\9ED1\9AD4", "sans-serif";
+  font-size: 48px;
+  /*****************/
+  /*** Font-Size ***/
+  /*****************/ }
+  .step h1, .step .h1 {
+    font-size: 124.8px; }
+  .step h2, .step .h2 {
+    font-size: 103.2px; }
+  .step h3, .step .h3 {
+    font-size: 81.6px; }
+  .step h4, .step .h4 {
+    font-size: 62.4px; }
+  .step h5, .step .h5 {
+    font-size: 48px; }
+  .step h6, .step .h6 {
+    font-size: 40.8px; }
+
+/*
+    slide style
+*/
+.slide {
+  display: block;
+  line-height: 1.4;
+  width: 1000px;
+  height: 700px;
+  padding: 40px 60px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: #666666;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  font-size: 35px;
+  letter-spacing: -1px; }
+  .slide h1, .slide .h1 {
+    font-size: 91px; }
+  .slide h2, .slide .h2 {
+    font-size: 75.25px; }
+  .slide h3, .slide .h3 {
+    font-size: 59.5px; }
+  .slide h4, .slide .h4 {
+    font-size: 45.5px; }
+  .slide h5, .slide .h5 {
+    font-size: 35px; }
+  .slide h6, .slide .h6 {
+    font-size: 29.75px; }
+
+/*
+    overview
+*/
+#overview {
+  display: none; }
+
+.impress-on-overview .step {
+  opacity: 1; }
+
+/*
+    hint
+*/
+#oi-hint {
+  opacity: 0;
+  animation: fadeOutUp .6s ease forwards;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #3e4852;
+  font-size: 20px;
+  text-align: center;
+  width: 400px;
+  height: 100px;
+  line-height: 100px;
+  position: fixed;
+  left: 25px;
+  top: 40%;
+  border-radius: 5px;
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.3)); }
+
+#oi-hint b {
+  color: #e5b560; }
+
+.impress-on-start-1 #oi-hint {
+  animation: fadeInDown .6s ease 3s forwards; }
+
+/*
+    stamp
+*/
+#oi-stamp {
+  color: #3e4852;
+  font-size: 12px;
+  min-width: 166px;
+  position: fixed;
+  bottom: 5px;
+  left: 50%;
+  margin-left: -83px;
+  opacity: 0;
+  animation: fadeOutUp .6s ease forwards; }
+  #oi-stamp span {
+    color: #d2482e;
+    font-size: 15px;
+    margin: 0 0.4em; }
+  #oi-stamp a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    padding: 0.15em 0.25em;
+    margin-left: 0.2em;
+    background: #3e4852;
+    border-radius: 0.2em;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; }
+    #oi-stamp a:hover, #oi-stamp a:focus {
+      color: rgba(255, 255, 255, 0.9);
+      background: #54626f;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      text-decoration: none; }
+  #oi-stamp b {
+    font-size: 13px; }
+
+.impress-on-overview #oi-stamp {
+  animation: fadeInDown .6s ease 1.5s forwards; }
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0); }
+  to {
+    opacity: 1;
+    transform: none; } }
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0); } }
+</style></head><body class="impress-not-supported"><div id="impress"><div class="step slide" id="start-1" data-x="-1100" data-y="-1500" data-z="0" data-scale="1" data-rotate="" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;<img src="images/docker_logo.png" alt="Docker logo" width="594" height="160"></p>
+<p>&nbsp;</p>
+<h1 style="text-align: center;">Docker</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1 style="text-align: center;">&nbsp;</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></div><div class="step slide" id="start-2" data-x="0" data-y="-1500" data-z="0" data-scale="1" data-rotate="" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0"><p>Agenda</p>
+<p>&nbsp;</p>
+<p>* Topic 1</p>
+<p>* Topic 2</p>
+<p>* Topic 3</p>
+<p>* Topic 4</p>
+<p>* Topic 5</p>
+<p>* Topic 6</p>
+<p>* Topic 7</p>
+<p>* Topic 8</p>
+<p>* Topic 9</p>
+<p>&nbsp;</p></div><div class="step" id="overview" data-x="3000" data-y="800" data-z="0" data-scale="9" data-rotate="" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0"></div></div><div id="oi-hint">Use a <b>spacebar</b> or <b>arrow keys</b> to navigate</div><div id="oi-stamp"><b>Carlan Calazans</b><span>♥</span>Powered by <a href="https://oawan.me/Oi" target="_blank">[ Oi ]</a></div><script src="http://cdnjs.cloudflare.com/ajax/libs/impress.js/0.5.3/impress.min.js"></script><script>impress().init();</script></body></html>
