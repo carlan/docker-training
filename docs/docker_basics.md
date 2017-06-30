@@ -149,12 +149,12 @@ Are you curious about what I'm using to serve the static website? Think for 10 s
 ```bash
 docker top static_site
 ```
-Did you get it right? This command will show us an output of the running proccess inside the container. It's very similar to _top_ from Linux. As a matter of fact, just type it on the terminal.
+Did you get it right? This command will show us an output of the running process inside the container. It's very similar to _top_ from Linux. As a matter of fact, just type it on the terminal.
 
 ```bash
 top
 ```
-As you can see, this is a list of all proccess running on this virtual machine. _Hit q to exit_.
+As you can see, this is a list of all processes running on this virtual machine. _Hit q to exit_.
 
 I wanna see some logs from the webserver, how about you? Yeah?
 
