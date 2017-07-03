@@ -1,8 +1,14 @@
 # Docker basics
 
+### A short story
+
+A little story first. Back in time, we used to have a server attached to an application, so for every application we developed, we needed to build and configure a server for it. If we have 2 applications, we needed 2 servers and the whole configuration for them. I'm talking about networking, backup, operating system installation and configuration too. It's time consuming, resource consuming and money consuming.
+
+Later on, virtualization was the thing. I'm refering to the virtualization as a method of divide the system resources between different applications...
+
 ### What is docker?
 
-Almost every developer these days know there is _something_ called docker or at least heard the word docker before. But, do you really know what docker is? Isn't that complicated actually is pretty simple to understand.
+Almost every developer these days know there is _something_ called docker or at least heard the word docker before. Although, do you really know what docker is? Isn't that complicated, actually is pretty simple to understand.
 
 Docker is a piece of software which aims to simplify the process of building, deploying and shipping applications and then running them in a controllable environment (sandbox).
 
@@ -10,7 +16,7 @@ The sandbox environment is called _container_ and this is really important to kn
 
 ### Containers
 
-When I first heard the term container I thought about that huge rectangle box with lots of stuff inside it on a ship. If you think of it, it's kind of a standard way to ship stuff in a ship.
+When I first heard the term _container_, I thought about that huge rectangle box with lots of stuff inside it that you put on a ship. If you think of it, it's kind of a standard way to ship stuff in a ship.
 
 Well, containers in docker are very similar. A container is a stardard way to ship your code to different environments.
 
@@ -20,7 +26,7 @@ A running instance of an image is also know as a container.
 
 As we just saw, an image is the basis of a container, a blueprint to get a container running. An image is built to be used in a container. Also, an image doesn't have a state and it never changes.
 
-If you want to run a Java application, you'll need an operation system like Ubuntu or Windows, and you'll also need the Java installed in the image to run your application.
+If you want to run a Java application, you'll need an operation system like Ubuntu or Windows, and you'll also need the Java installed in the image to run your application. It's like a virtual machine that you can't modify.
 
 ### Docker client
 
@@ -72,9 +78,7 @@ docker ps -a
 ```
 Now, you see it.
 
-So, if the container is still running it's possible to see it with just the _ps_ without the option "-a", 
-but if the container is stopped we have to include the "-a" option. Or, you can do it like me run the command with the "-a" 
-option all the time.
+So, if the container is still running it's possible to see it with just the _ps_ without the option "-a", but if the container is stopped we have to include the "-a" option. Or, you can do it like me run the command with the "-a" option all the time.
 
 If you are like me, there still a question to ask. Where the _hello world_ image is stored?
 
@@ -124,7 +128,7 @@ This new option will run the container in background mode (detached). Now, we ca
 ```bash
 docker ps
 ```
-If you look at the name and think this is automatically generate. You are right!
+If you look at the name and think this is automatically generated. You are right!
 
 Sometimes it's hard do remember the container name or reference it as the id, so let's rename it.
 
