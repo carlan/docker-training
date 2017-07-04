@@ -2,7 +2,7 @@
 
 ### A short story
 
-A little story first. Back in time, we used to have a server attached to an application, so for every application we developed, we needed to build and configure a server for it. If we have 2 applications, we needed 2 servers and the whole configuration for them. I'm talking about networking, backup, operating system installation and configuration too. It's time consuming, resource consuming and money consuming.
+Back in time, we used to have a server attached to an application, so for every application we developed, we needed to build and configure a server for it. If we have 2 applications, we needed 2 servers. I'm talking about networking, backup, operating system installation and configuration too. It was time consuming, resource consuming and money consuming.
 
 Later on, virtualization was the thing. I'm refering to the virtualization as a method of divide the system resources between different applications...
 
@@ -197,4 +197,16 @@ docker rmi carlancalazans/static_site
 ```
 Very good. I'll talk to you again on the next example.
 
-### Example 4: TBA
+### Example 4: Your static site
+
+Let's change the last example a little. What we going to do is use the image of the static site from our previous example to serve your static website. We can do this in another way, but I'm going to keep things simple for now.
+
+A data volume is a special directory that we can use to share data with one or more containers. You can think of it like a usb drive, if it's plugged in you can have access to it, read and write files.
+
+On this example, we are going to modify the index.html stored inside the image to show anything you want, you can have your own version of the index.html store in some directory and using a volume we can serve it using the nginx.
+
+To do this, we need to learn how to set a volume. It's so simple that maybe you already know. Let's see.
+
+```bash
+docker run -d -v <PATH_MY_DIR>:/usr/share/nginx/html carlancalazans/static_site
+```
