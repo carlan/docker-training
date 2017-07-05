@@ -148,12 +148,16 @@ To get some more information about the container formatted in json, type:
 docker inspect static_site
 ```
 
-Are you curious about what I'm using to serve the static website? Think for 10 seconds and type the command below:
+Are you curious about what I'm using to serve the static website? Try to find the answer for less than 5 seconds.
+
+Are you ready to find the truth? Type the command below:
 
 ```bash
 docker top static_site
 ```
-Did you get it right? This command will show us an output of the running process inside the container. It's very similar to _top_ from Linux. As a matter of fact, just type it on the terminal.
+Did you get it right?
+
+This command will show us an output of the running processes inside the container. It's very similar to the command _top_ from Linux. As a matter of fact, just type it on the terminal.
 
 ```bash
 top
@@ -167,14 +171,16 @@ To get the logs from a container, execute the below in a terminal:
 ```bash
 docker logs static_site
 ```
-Until now, we don't even had a change to access the website. For this, we need to get port from the webserver. To see all the ports mapped to this container, type:
+Until now, we don't even had a chance to access the website. For this, we need to get the running port from the webserver. To see all the ports mapped to this container, type:
 
 ```bash
 docker port static_site
 ```
-Now, you can map a port on your virtual machine to access the website. I'll show you how to do this in person.
+Now, you can map a port on your virtual machine to access the website. I'll show you how to do this in person, it's not complicated.
 
-Well, that's finish this example.
+As you can see, it's just a html page, super simple.
+
+Well, that's the end of this sample.
 
 We are leaving some container and images behind. Let's clean all up before finish.
 
@@ -194,19 +200,26 @@ Good! We don't have any container, let's delete the image with:
 
 ```bash
 docker rmi carlancalazans/static_site
+docker images
 ```
 Very good. I'll talk to you again on the next example.
 
-### Example 4: Your static site
+### Example 4: Your static site or other sample?
 
-Let's change the last example a little. What we going to do is use the image of the static site from our previous example to serve your static website. We can do this in another way, but I'm going to keep things simple for now.
+NOTE TO MYSELF: I can build a simple image picker using another framework and/or language
 
-A data volume is a special directory that we can use to share data with one or more containers. You can think of it like a usb drive, if it's plugged in you can have access to it, read and write files.
+Let's change the last example a little. What we going to do is use the image of the static site from our previous example to serve your static website. To do this, we will need to setup a volume, but what is a volume you can ask?
 
-On this example, we are going to modify the index.html stored inside the image to show anything you want, you can have your own version of the index.html store in some directory and using a volume we can serve it using the nginx.
+A data volume is a special directory that we can use to share data with one or more containers. You can think of it like a usb drive, if it's plugged in you can have access to it, read and write files. On the other hand, if it's not you can't access the data.
+
+On this example, we are going to modify the _index.html_ stored inside the image to show anything you want, you can have your own version of the _index.html_ store in some directory and using a volume you can serve it.
 
 To do this, we need to learn how to set a volume. It's so simple that maybe you already know. Let's see.
 
 ```bash
-docker run -d -v <PATH_MY_DIR>:/usr/share/nginx/html carlancalazans/static_site
+docker run -d -v <PATH_MY_DIR>:/usr/share/nginx/html -p 4000:80 carlancalazans/static_site
 ```
+
+It's important to note that you'll need the complete path of your local directory. For us, will be something like /home/docker/<PATH_TO_MY_DIR>.
+
+With the container running you can access the mapped port on 
