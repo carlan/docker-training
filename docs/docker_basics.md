@@ -204,22 +204,45 @@ docker images
 ```
 Very good. I'll talk to you again on the next example.
 
-### Example 4: Your static site or other sample?
+### Example 4: Quotes
 
-NOTE TO MYSELF: I can build a simple image picker using another framework and/or language
+I created a very simple Python project, which will server as our sample on this section.
 
-Let's change the last example a little. What we going to do is use the image of the static site from our previous example to serve your static website. To do this, we will need to setup a volume, but what is a volume you can ask?
+The intent of the application is to show some quotes in the middle of the screen. When we hit _CTRL+R_ or _F5_, the quote can be refreshed (actually is random).
 
-A data volume is a special directory that we can use to share data with one or more containers. You can think of it like a usb drive, if it's plugged in you can have access to it, read and write files. On the other hand, if it's not you can't access the data.
+First, let's run to see it working:
 
-On this example, we are going to modify the _index.html_ stored inside the image to show anything you want, you can have your own version of the _index.html_ store in some directory and using a volume you can serve it.
+```bash
+docker run -b -p 4000:4000 carlancalazans/quotes
+```
+With the container running, open a tab on the browser and go to the url _http://localhost:4000_. As you can see, if it's all working, it does exactly what I told you before.
+
+How to add more quotes or how to change the quotes presented? In the case you didn't like them. It's totally fine, no worries.
+
+Well, I don't have an administration page or a page where you can insert/update/delete quotes. The quotes are in a text file _quotes.txt_ inside a folder called _database_ on the directory _/usr/src/app_. The application will load this file when it's starting and than manage the contents in memory. As I said, super simple.
+
+So, how we are going to change this file?
+
+To do this, we will need to setup a volume, but what is a volume? You can ask.
+
+A data volume is a special directory that we can use to share data with one or more containers. You can think of it like a usb drive, if it's plugged in you can have access to it, read and write files. On the other hand, if it's not you can't access the data. You can create persistent volumes, but for the sake of this sample we will create just a bind-mounted one to see it working.
+
+On this sample we are going to modify the _quotes.txt_ stored inside the image to show anything you want, you can have your own version of the _quotes.txt_ stored in some directory and by using a volume you can serve it.
 
 To do this, we need to learn how to set a volume. It's so simple that maybe you already know. Let's see.
 
 ```bash
-docker run -d -v <PATH_MY_DIR>:/usr/share/nginx/html -p 4000:80 carlancalazans/static_site
+docker run -d -v <PATH_MY_DIR>:/usr/src/app/database -p 4000:4000 carlancalazans/quotes
 ```
 
-It's important to note that you'll need the complete path of your local directory. For us, will be something like /home/docker/<PATH_TO_MY_DIR>.
+It's important to note that you'll need the complete path of your local directory. For us, will be something like _/home/docker/quotes/database/quotes.txt_ and than we can specify the mount point inside the image.
 
-With the container running you can access the mapped port on 
+With the container running you can access the mapped port on your machine to see the results. I hope you can see your quotes or whatever you wrote on the _quotes.txt_ file on the screen.
+
+TODO:
+restart container
+stop container
+start container
+pause container
+unpause container
+
