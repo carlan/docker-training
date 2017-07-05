@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Docker static site</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+          height: 100%;
+        }
+        body {
+          text-align: center;
+        }
+        .site-wrapper {
+          display: table;
+          width: 100%;
+          height: 100%;
+          min-height: 100%;
+        }
+        .site-wrapper-inner {
+          display: table-cell;
+          vertical-align: top;
+        }
+        .cover-container {
+          margin-right: auto;
+          margin-left: auto;
+        }
+        .inner {
+          padding: 30px;
+        }
+        .cover {
+          padding: 0 20px;
+        }
+        .cover .btn-lg {
+          padding: 10px 20px;
+          font-weight: bold;
+        }
+	blockquote:before {
+	  content: open-quote;
+	  font-weight: bold;
+	  font-size: 6em;
+	  line-height: 0.1em;
+	  margin-right: 0.25em;
+	  vertical-align: -0.4em;
+	  color: #ccc;
+	}
+	blockquote p {
+          font-size: 1.5em;
+	  display: inline;
+	}
+        @media (min-width: 768px) {
+          .site-wrapper-inner {
+            vertical-align: middle;
+          }
+          .cover-container {
+            width: 100%;
+          }
+        }
+        @media (min-width: 992px) {
+          .cover-container {
+            width: 700px;
+          }
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+              
+              <div class="inner cover">
+		<blockquote class="blockquote">
+		  <p class="mb-0">{{quote}}</p>
+		</blockquote>
+              </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script  src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
