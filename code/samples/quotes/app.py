@@ -9,7 +9,11 @@ quotes = [line.rstrip('\n') for line in open(QUOTES_FILENAME)]
 
 @app.route('/')
 def index():
-    quote = random.choice(quotes)
+    try:
+      quote = random.choice(quotes)
+    except IndexError:
+      quote = ''
+
     return render_template('index.html', quote=quote)
 
 if __name__ == "__main__":
