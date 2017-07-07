@@ -40,7 +40,7 @@ Here is an image for you to visualize:
 
 ![Container based virtualization](https://raw.githubusercontent.com/carlan/docker-training/master/docs/images/contenarization.png)
 
-With docker you can abandon vitual machines and replace them with containers due to their lower overhead and potentially beter performance.
+With docker you can abandon vitual machines and replace them with containers due to their lower overhead and potentially better performance.
 
 Docker is technology agnostic, you can use docker with almost  any language or framework. Here, on this presentation I'm going to use for example Python and Java, but I can easily run Ruby, Go, Scala, Smalltalk, Groovy.
 
@@ -56,5 +56,5 @@ A running instance of an image is also know as a container.
 
 As we just saw, an image is the basis of a container, a blueprint to get a container running. An image is built to be used in a container. Also, an image doesn't have a state and it never changes.
 
-If you want to run a Java application, you'll need an operation system like Ubuntu or Windows, and you'll also need the Java installed in the image to run your application. It's like a virtual machine that you can't modify.
+If you want to run a Java application, you'll need an operation system like Ubuntu or Windows, and you'll also need the Java installed in the image to run your application.
 

@@ -24,3 +24,4 @@ In order to follow up the training you'll need:
    * This is just a Linux box with docker installed and basic tools
 * Clone this repo (for sample files and slides)
 * Basic knowledge of Linux
+* If you found this util, you can *star* this repo :)
