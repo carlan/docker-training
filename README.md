@@ -8,7 +8,8 @@ This is a docker training that I'm planning to do (or did) for the developer tea
 
 On this training I'll cover the subjects:
 
-1 - [Docker basics](docs/docker_basics.md)
+1. [Motivation and concepts](docs/docker_concepts.md)
+2. [Docker basics](docs/docker_basics.md)
 
 ### Presentation
 
