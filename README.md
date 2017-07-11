@@ -10,6 +10,7 @@ On this training I'll cover the subjects:
 
 1. [Motivation and concepts](docs/docker_concepts.md)
 2. [Docker basics](docs/docker_basics.md)
+3. [Docker file](docs/docker_file.md)
 
 ### Presentation
 
@@ -22,6 +23,7 @@ In order to follow up the training you'll need:
 * Download and install [Oracle VM Virtual Box](https://www.virtualbox.org/wiki/Downloads)
 * Download OVA file from [Sharepoint](https://is.gd/KfWx6B) and import it
    * This is just a Linux box with docker installed and basic tools
+* Create a [docker hub account](https://hub.docker.com)
 * Clone this repo (for sample files and slides)
 * Basic knowledge of Linux
 * If you found this useful, you can *star* this repo :)
