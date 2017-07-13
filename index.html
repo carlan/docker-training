@@ -1,278 +1,86 @@
-<!DOCUMENT html><html><head><meta charset="UTF-8"><title>docker</title><style type="text/css">@import url(https://fonts.googleapis.com/css?family=Oxygen);</style><style type="text/css">@charset "UTF-8";
-/*** base style for impress ***/
-/************/
-/*** Font ***/
-/************/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta content="width=1024" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <title>Docker 101</title>
+  <meta content="Docker 101" name="description">
+  <meta content="Carlan Calazans" name="author">
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
+  <link rel="stylesheet" href="impress.js/extras/highlight/styles/github.css">
+  <link href="css/carlancalazans.css" rel="stylesheet">
+</head>
 
-body {
-  line-height: 1;
-  font-family: "Oxygen", georgia, "\5FAE\8EDF\6B63\9ED1\9AD4", "sans-serif";
-  min-height: 740px;
-  background: #d7d7d7;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#f0f0f0), to(#9ba5af));
-  background: -webkit-radial-gradient(#f0f0f0, #9ba5af);
-  background: -moz-radial-gradient(#f0f0f0, #9ba5af);
-  background: -ms-radial-gradient(#f0f0f0, #9ba5af);
-  background: -o-radial-gradient(#f0f0f0, #9ba5af);
-  background: radial-gradient(#f0f0f0, #9ba5af); }
+<body class="impress-not-supported">
+  <div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js,
+    so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>,
+    <b>Safari</b> or <b>Firefox</b> browser.</p>
+  </div>
+  <div id="impress">
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="-4000" data-y="-2500" id="docker"><p>&nbsp;<br></p><p>&nbsp;<br></p><p>&nbsp;<br></p><p><img alt="" data-mce-src="images/docker_logo.png" data-mce-style="display: block; margin-left: auto; margin-right: auto;" height="160" src="images/docker_logo.png" style="display: block; margin-left: auto; margin-right: auto;" width="594"></p></div>
 
-ol, ul {
-  list-style: none; }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="-3000" data-y="-2500" id="theplan"><h3>The plan</h3><div style="font-size: 20pt;" data-mce-style="font-size: 20pt;"><ul style="list-style-type: square;" data-mce-style="list-style-type: square;"><li>Motivation and concepts<ul style="list-style-type: circle;" data-mce-style="list-style-type: circle;"><li><a href="#story1" data-mce-href="#story1" data-mce-selected="1">A short story</a></li><li><a href="#vagrant1" data-mce-href="#vagrant1">Vagrant</a></li><li><a href="#whatisdocker" data-mce-href="#whatisdocker">What is docker?</a></li><li><a href="#docker-container" data-mce-href="#docker-container">Docker containers</a></li><li><a href="#docker-image" data-mce-href="#docker-image">Docker images</a></li></ul></li><li>Docker basics<ul style="list-style-type: circle;" data-mce-style="list-style-type: circle;"><li><a href="#handson1" data-mce-href="#handson1">Hands-on with 4 samples</a></li></ul></li><li>Docker file<ul style="list-style-type: circle;" data-mce-style="list-style-type: circle;"><li>Life without Dockerfile</li><li>Life with Dockerfile</li></ul></li></ul></div></div>
 
-blockquote, q {
-  quotes: none; }
-  blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none; }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="-2000" data-y="-2500" id="story1"><h3>A short story</h3><p style="text-align: left;" data-mce-style="text-align: left;">Back in time, we used to have 1:1 relation between a server and an application.</p><p style="text-align: left;" data-mce-style="text-align: left;">&nbsp; &nbsp;&nbsp;<img src="images/1server1app.png" alt="" width="131" height="354" style="display: block; margin-left: auto; margin-right: auto;" data-mce-style="display: block; margin-left: auto; margin-right: auto;" data-mce-src="images/1server1app.png"></p></div>
+    
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="-1000" data-y="-2500" data-z="0" id="story2"><p></p><p>If we have 2 applications, we needed 2 servers.</p><p>&nbsp;<br></p><p><img src="images/1server1app.png" alt="" width="131" height="354" data-mce-src="images/1server1app.png"><img src="images/1server1app.png" alt="" width="131" height="354" data-mce-src="images/1server1app.png"></p></div>
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="0" data-y="-2500" data-z="0" id="story3"><p style="text-align: left;" data-mce-style="text-align: left;"></p><p style="text-align: left;" data-mce-style="text-align: left;">You know where I'm going with this. More&nbsp;applications means more servers.</p><p style="text-align: left;" data-mce-style="text-align: left;">And with it, networking, backup, operating system installation and configuration.</p><p style="text-align: left;" data-mce-style="text-align: left;">&nbsp;<img src="images/timeresourceandmoney.png" alt="" width="453" height="326" style="display: block; margin-left: auto; margin-right: auto;" data-mce-style="display: block; margin-left: auto; margin-right: auto;" data-mce-src="images/timeresourceandmoney.png"></p></div>
 
-/*
-    Now let's bring some text styles back ...
-*/
-b, strong {
-  font-weight: bold; }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="1000" data-y="-2500" data-z="0" id="virtualization1"><p style="text-align: left;" data-mce-style="text-align: left;"></p><p style="text-align: left;" data-mce-style="text-align: left;">Virtualization:</p><p style="text-align: left;" data-mce-style="text-align: left;">A method of divide the system resources between different applications. To use it, we need a virtual machine.</p><p style="text-align: left;" data-mce-style="text-align: left;">Virtual machine:</p><p style="text-align: left;" data-mce-style="text-align: left;">Is an emulation of a physical computing environment.</p></div>
 
-i, em {
-  font-style: italic; }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="2000" data-y="-2500" data-z="0" id="virtualization2"><p></p><p>&nbsp;</p><p style="text-align: left;" data-mce-style="text-align: left;"><img src="images/no1server1app.png" alt="" width="131" height="354" data-mce-src="images/no1server1app.png"><img style="float: right;" src="images/1servernvms.png" alt="" width="484" height="359" data-mce-src="images/1servernvms.png" data-mce-style="float: right;"></p></div>
 
-sub, sup {
-  position: relative; }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="3000" data-y="-2500" data-z="0" id="virtualization3"><p>&nbsp;<br></p><p>&nbsp;<br></p><p><img src="images/thingsbecamecheaper.png" alt="" width="453" height="131" data-mce-src="images/thingsbecamecheaper.png"></p><p>&nbsp;<br></p><p>Problem solved! \o/</p><p>Right?</p></div>
 
-sub {
-  bottom: -.25em; }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="4000" data-y="-2500" data-z="0" id="virtualization4"><p><img src="images/waitthinking.png" alt="" width="212" height="201" data-mce-src="images/waitthinking.png"></p><p style="text-align: left;" data-mce-style="text-align: left;">Wait! What is the price of running a VM?</p><p style="text-align: left;" data-mce-style="text-align: left;">Virtual Machines waste a lot of resources. A VM requests for <span style="text-decoration: underline;" data-mce-style="text-decoration: underline;">CPU</span>, <span style="text-decoration: underline;" data-mce-style="text-decoration: underline;">memory</span>, <span style="text-decoration: underline;" data-mce-style="text-decoration: underline;">hard disk</span>, <span style="text-decoration: underline;" data-mce-style="text-decoration: underline;">network</span> <strong>and</strong> <span style="text-decoration: underline;" data-mce-style="text-decoration: underline;">other hardware resources</span>, which are managed by a virtualization layer (<em>hypervisor</em>) responsible for translating these requests to the underlying physical hardware.</p><p>&nbsp;<br></p><p>&nbsp;<br></p></div>
 
-sup {
-  top: -.5em; }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="5000" data-y="-2500" data-z="0" id="virtualization5"><p style="text-align: center;" data-mce-style="text-align: center;"><br></p><p style="text-align: center;" data-mce-style="text-align: center;"></p><p><img src="images/emulation.png" alt="" width="563" height="344" data-mce-src="images/emulation.png"></p><p>This is how it works</p></div>
 
-/*
-    ... and give links a nice look.
-*/
-.step a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  padding: 0 0.3em;
-  background: #3e4852;
-  border-radius: 0.2em;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s; }
-  .step a:hover, .step a:focus {
-    color: rgba(255, 255, 255, 0.9);
-    background: #54626f;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-decoration: none; }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="6000" data-y="-2500" data-z="0" id="vagrant1"><p></p><p><img src="images/vagrant-vertical-color.png" alt="" width="507" height="506" data-mce-src="images/vagrant-vertical-color.png"><br></p></div>
 
-/*
-    step style
-*/
-.impress-enabled .step {
-  margin: 0;
-  opacity: 0.3;
-  -webkit-transition: opacity 1s;
-  -moz-transition: opacity 1s;
-  -ms-transition: opacity 1s;
-  -o-transition: opacity 1s;
-  transition: opacity 1s; }
-  .impress-enabled .step.active {
-    opacity: 1; }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="7000" data-y="-2500" data-z="0" id="vagrant2"><h3>Vagrant</h3><p style="text-align: left;" data-mce-style="text-align: left;">Vagrant is a virtual machine manager, with it you can easily create, modify and delete virtual machines using the command line rather than a user interface with icons.</p><p style="text-align: left;" data-mce-style="text-align: left;">The creation of the virtual machines became faster with Vagrant. It offers a repository with virtual machines pre-installed to be downloaded and used as faster as your internet connection can download it.</p><p style="text-align: left;" data-mce-style="text-align: left;"><img src="images/vagrantvbvms.png" alt="" width="786" height="141" data-mce-src="images/vagrantvbvms.png"></p></div>
 
-.step {
-  cursor: pointer;
-  position: relative;
-  width: 900px;
-  padding: 20px;
-  margin: 20px auto;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: "Oxygen", georgia, "\5FAE\8EDF\6B63\9ED1\9AD4", "sans-serif";
-  font-size: 48px;
-  /*****************/
-  /*** Font-Size ***/
-  /*****************/ }
-  .step h1, .step .h1 {
-    font-size: 124.8px; }
-  .step h2, .step .h2 {
-    font-size: 103.2px; }
-  .step h3, .step .h3 {
-    font-size: 81.6px; }
-  .step h4, .step .h4 {
-    font-size: 62.4px; }
-  .step h5, .step .h5 {
-    font-size: 48px; }
-  .step h6, .step .h6 {
-    font-size: 40.8px; }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="8000" data-y="-2500" data-z="0" id="vagrant3"><h3>Vagrant</h3><p>But, under the hood, it's still running a virtual machine.</p><p><img src="images/housedisappointed.gif" alt="" width="490" height="429" data-mce-src="images/housedisappointed.gif"></p><p><br></p></div>
 
-/*
-    slide style
-*/
-.slide {
-  display: block;
-  line-height: 1.4;
-  width: 1000px;
-  height: 700px;
-  padding: 40px 60px;
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  color: #666666;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-  font-size: 35px;
-  letter-spacing: -1px; }
-  .slide h1, .slide .h1 {
-    font-size: 91px; }
-  .slide h2, .slide .h2 {
-    font-size: 75.25px; }
-  .slide h3, .slide .h3 {
-    font-size: 59.5px; }
-  .slide h4, .slide .h4 {
-    font-size: 45.5px; }
-  .slide h5, .slide .h5 {
-    font-size: 35px; }
-  .slide h6, .slide .h6 {
-    font-size: 29.75px; }
+    <div class="step" data-scale="5" data-x="-2000" data-y="1400" id="whatisdocker" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-rotate-order="xyz"><p>What is docker?</p><p>Docker is a piece of software which aims to simplify the process of building, deploying and shipping applications and then running them in a controllable environment (sandbox).</p><p>The sandbox environment is called <em>container</em> and this is really important to know.</p></div>
 
-/*
-    overview
-*/
-#overview {
-  display: none; }
+    <div class="step" data-rotate="90" data-scale="5" data-x="-2550" data-y="6200" id="container-revolution" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-rotate-order="xyz"><p>The container revolution started when the maintaners of the Linux Kernel added a feature called namespaces.</p><p>Namespaces can be used to create an isolated container that has no access to objects outside it. This enables multiple isolated executions within a single operating system kernel.</p></div>
 
-.impress-on-overview .step {
-  opacity: 1; }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="9000" data-y="-2500" data-z="0" id="advantages"><h3>What is docker?</h3><p style="text-align: left;" data-mce-style="text-align: left;">Advantages:</p><ul><li>A container doesn't need to boot the operating system kernel like VM's because it's running on the atual operating system kernel.</li><li>The creation of a container is so fast as the instantiation of a class.</li><li>Containers states (or images) are very small compared to VM's, so they are easy to distribute.</li></ul><p>&nbsp;<br></p></div>
 
-/*
-    hint
-*/
-#oi-hint {
-  opacity: 0;
-  animation: fadeOutUp .6s ease forwards;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: #3e4852;
-  font-size: 20px;
-  text-align: center;
-  width: 400px;
-  height: 100px;
-  line-height: 100px;
-  position: fixed;
-  left: 25px;
-  top: 40%;
-  border-radius: 5px;
-  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.3)); }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="10000" data-y="-2500" data-z="0" id="docker-illustration"><h3>What is docker?</h3><p>&nbsp;<br></p><p><img src="images/contenarization.png" alt="" width="563" height="323" data-mce-src="images/contenarization.png"></p><p>Where is the hypervisor?</p></div>
 
-#oi-hint b {
-  color: #e5b560; }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="-4000" data-y="-1500" data-z="0" id="docker-agnostic"><h3>What is docker?</h3><p style="text-align: left;" data-mce-style="text-align: left;">Docker is technology agnostic, you can use docker with almost any language or framework.</p><p style="text-align: left;" data-mce-style="text-align: left;">Here, on this presentation I'm going to use for example <span style="text-decoration: line-through;" data-mce-style="text-decoration: line-through;">Java</span> and Python, but I can easily run Ruby, Go, Scala, Smalltalk, Groovy.</p></div>
 
-.impress-on-start-1 #oi-hint {
-  animation: fadeInDown .6s ease 3s forwards; }
+    <div class="step" data-rotate="180" data-scale="6" data-x="3500" data-y="1400" id="docker-container"><p><strong>Docker containers</strong></p><p>A container is a stardard way to ship your code to different environments.</p><p>A running instance of an image is also know as a container.</p></div>
 
-/*
-    stamp
-*/
-#oi-stamp {
-  color: #3e4852;
-  font-size: 12px;
-  min-width: 166px;
-  position: fixed;
-  bottom: 5px;
-  left: 50%;
-  margin-left: -83px;
-  opacity: 0;
-  animation: fadeOutUp .6s ease forwards; }
-  #oi-stamp span {
-    color: #d2482e;
-    font-size: 15px;
-    margin: 0 0.4em; }
-  #oi-stamp a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    padding: 0.15em 0.25em;
-    margin-left: 0.2em;
-    background: #3e4852;
-    border-radius: 0.2em;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s; }
-    #oi-stamp a:hover, #oi-stamp a:focus {
-      color: rgba(255, 255, 255, 0.9);
-      background: #54626f;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      text-decoration: none; }
-  #oi-stamp b {
-    font-size: 13px; }
+    <div class="step" data-rotate="0" data-scale="1" data-x="4300" data-y="1000" data-z="-4000" id="docker-image"><h3>Docker images</h3><p>An image is the basis of a container, a blueprint to get a container running, it's built to be used in a container.</p><p>Also, an image doesn't have a state and it never changes.</p></div>
 
-.impress-on-overview #oi-stamp {
-  animation: fadeInDown .6s ease 1.5s forwards; }
+    <div class="step" data-scale="1" data-x="1000" data-y="4000" data-z="-4000" id="enough-theory" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-rotate-order="xyz"><p style="text-align: center;" data-mce-style="text-align: center;">Enough of theory.</p><p style="text-align: center;" data-mce-style="text-align: center;">Let's start the hands-on!</p></div>
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -100%, 0); }
-  to {
-    opacity: 1;
-    transform: none; } }
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="-3000" data-y="-1500" data-z="0" id="handson1"><h3>Hands-on</h3><p style="text-align: left;" data-mce-style="text-align: left;">Docker client</p><p style="text-align: left;" data-mce-style="text-align: left;">Docker ships with a client which is used to <em>put stuff in a container</em>, <em>load containers in ships</em>, <em>remove containers from ships</em> and so on.</p><p style="text-align: left;" data-mce-style="text-align: left;">It's how we interact with images and containers, actually a little more than that.</p>
+    <pre><code class="shell">docker</code></pre>
+    <pre><code class="shell">docker -h</code></pre>
+    </div>
 
-@keyframes fadeOutUp {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0); } }
-</style></head><body class="impress-not-supported"><div id="impress"><div class="step slide" id="start-1" data-x="-1100" data-y="-1500" data-z="0" data-scale="1" data-rotate="" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0"><p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;&nbsp;<img src="images/docker_logo.png" alt="Docker logo" width="594" height="160"></p>
-<p>&nbsp;</p>
-<h1 style="text-align: center;">Docker</h1>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h1 style="text-align: center;">&nbsp;</h1>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p></div><div class="step slide" id="start-2" data-x="0" data-y="-1500" data-z="0" data-scale="1" data-rotate="" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0"><p>Agenda</p>
-<p>&nbsp;</p>
-<p>* Topic 1</p>
-<p>* Topic 2</p>
-<p>* Topic 3</p>
-<p>* Topic 4</p>
-<p>* Topic 5</p>
-<p>* Topic 6</p>
-<p>* Topic 7</p>
-<p>* Topic 8</p>
-<p>* Topic 9</p>
-<p>&nbsp;</p></div><div class="step" id="overview" data-x="3000" data-y="800" data-z="0" data-scale="9" data-rotate="" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0"></div></div><div id="oi-hint">Use a <b>spacebar</b> or <b>arrow keys</b> to navigate</div><div id="oi-stamp"><b>Carlan Calazans</b><span>♥</span>Powered by <a href="https://oawan.me/Oi" target="_blank">[ Oi ]</a></div><script src="http://cdnjs.cloudflare.com/ajax/libs/impress.js/0.5.3/impress.min.js"></script><script>impress().init();</script></body></html>
+    <div class="step slide" data-rotate-order="xyz" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="-2000" data-y="-1500" data-z="0" id="handson2"><h3>Hands-on</h3><p style="text-align: left;" data-mce-style="text-align: left;">&nbsp;<br></p></div>
+
+    <div class="step" data-scale="12" data-x="3000" data-y="2500" data-z="0" id="overview" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-rotate-order="xyz"><p>&nbsp;<br></p></div>
+
+  </div>
+  <div id="impress-toolbar"></div>
+  <script type="text/javascript" src="impress.js/extras/highlight/highlight.pack.js"  type="text/javascript"></script>
+  <script src="impress.js/extras/impress-console/js/impressConsole.js" type="text/javascript">
+  </script> 
+  <script type="text/javascript">
+  var impressConsoleCss = 'impress.js/extras/impress-console/css/impressConsole.css';
+  </script> 
+  <script src="impress.js/js/impress.js">
+  </script> 
+  <script>
+  impress().init();
+  </script>
+
+</body></html>
