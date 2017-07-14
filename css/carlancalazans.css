@@ -139,7 +139,7 @@ body {
 
 /* Highlight.js used for coloring pre > code blocks. */
 .slide pre > code {
-    font-size: 14px;
+    font-size: 20px;
     text-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
