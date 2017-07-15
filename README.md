@@ -14,7 +14,7 @@ On this training I'll cover the subjects:
 
 ### Presentation
 
-The slides can be found on [this link](http://github.com).
+The slides can be found on [this link](https://carlan.github.io/docker-training).
 
 ### Requirements
 
