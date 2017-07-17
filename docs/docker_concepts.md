@@ -32,7 +32,7 @@ But, under the hood, it's still a virtual machine.
 
 Almost every developer these days know there is _something_ called docker or at least heard the word docker before. Although, do you really know what docker is? It isn't that complicated, actually is pretty simple to understand.
 
-Docker is a piece of software which aims to simplify the process of building, deploying and shipping applications and then running them in a controllable environment, we can call it sandbox.
+Docker is a piece of software which aims to simplify the process of building, deploying, shipping and running applications in a controllable environment (sandbox).
 
 For Docker, the sandbox environment is called _container_ and this is really important to know.
 
